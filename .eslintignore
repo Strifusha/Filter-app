@@ -1,0 +1,15 @@
+/chunks/
+
+*.chunk.js
+
+/build/
+
+/temp/
+
+/.cache/
+
+.next/static/chunks/
+
+*.config.js
+
+.next/

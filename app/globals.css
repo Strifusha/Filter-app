@@ -12,22 +12,81 @@
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-end-rgb: 34, 34, 34;
   }
 }
 
 body {
+  @apply text-base leading-relaxed text-gray-900 dark:text-gray-100;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .loader-overlay {
+    @apply absolute inset-0 flex items-center justify-center bg-gray-100 bg-opacity-50 z-50;
+  }
+
+  .loader-spinner {
+    @apply w-16 h-16 border-4 border-blue-500 border-t-transparent border-solid rounded-full animate-spin;
+  }
+
+  .loader-text {
+    @apply text-gray-700 ml-4;
+  }
+
+  .car-models-list {
+    @apply divide-y divide-gray-200;
+  }
+
+  .car-model-item {
+    @apply py-4 flex items-center justify-between;
+  }
+
+  .car-model-name {
+    @apply text-lg font-medium text-gray-700;
+  }
+
+  .car-model-id {
+    @apply text-sm text-gray-500;
+  }
+
+  .no-models-found {
+    @apply py-4 text-center text-gray-500;
+  }
+
+  .label-custom {
+    @apply block text-lg font-medium text-gray-700 mb-2;
+  }
+
+  .select-custom {
+    @apply w-full bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+  }
+
+  .container {
+    @apply relative p-4;
+  }
+
+  .error-message {
+    @apply text-red-500 text-center;
+  }
+
+  .car-models-container {
+    @apply w-full max-w-lg bg-white shadow-md rounded-lg p-6 max-h-[calc(100vh-18rem)] overflow-auto;
+  }
+
+  .heading {
+    @apply text-2xl font-bold mb-4;
   }
 }
